@@ -1,10 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>我的第一个 GitHub Pages 网页</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <title>公司宣传页</title>
 </head>
-<body>
-    <h1>欢迎访问我的网页！</h1>
-    <p>这是通过 GitHub Pages 发布的网页内容。</p>
+
+<body class="bg-gray-100 font-sans">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-gray-800">长沙宝业电子科技有限公司</a>
+            <div class="flex space-x-4">
+                <a href="#" class="text-gray-600 hover:text-gray-800">首页</a>
+                <a href="#" class="text-gray-600 hover:text-gray-800">关于我们</a>
+                <a href="#" class="text-gray-600 hover:text-gray-800">产品与服务</a>
+                <a href="#" class="text-gray-600 hover:text-gray-800">团队介绍</a>
+                <a href="#" class="text-gray-600 hover:text-gray-800">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="bg-cover bg-center h-screen flex items-center justify-center"
+        style="background-image: url('https://picsum.photos/1920/1080');">
+        <div class="text-center text-white">
+            <h1 class="text-5xl font-bold mb-4">欢迎来到我们的公司</h1>
+            <p class="text-xl mb-8">我们专注于提供高质量的产品和服务</p>
+            <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full">了解更多</a>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">关于我们</h2>
+        <p class="text-gray-600 leading-relaxed text-center">我们是一家充满创新精神的公司，致力于在行业内取得卓越成就。凭借专业的团队和先进的技术，我们为客户提供全方位的解决方案，帮助他们实现业务目标。</p>
+    </section>
+
+    <!-- 产品与服务 -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">产品与服务</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-100 rounded-lg shadow-md p-6">
+                    <i class="fa-solid fa-laptop-code text-3xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">技术与信息服务</h3>
+                    <p class="text-gray-600 leading-relaxed">我们提供电子产品及配件技术咨询、信息技术咨询、信息系统集成、软件服务，承接电力信息系统设计开发维护。</p>
+                </div>
+                <div class="bg-gray-100 rounded-lg shadow-md p-6">
+                    <i class="fa-solid fa-chart-line text-3xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">设备相关服务</h3>
+                    <p class="text-gray-600 leading-relaxed">我们涵盖电力设备租赁、电气设备集成修理，提供计算机及办公设备维修，负责交通设施安装，销售电源设备、电池及动力蓄电池包等产品。矿产品、建材及化工产品、机械设备、五金产品及电子产品的批发；家用电器及电子产品零售。</p>
+                </div>
+                <div class="bg-gray-100 rounded-lg shadow-md p-6">
+                    <i class="fa-solid fa-globe text-3xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">人力资源服务</h3>
+                    <p class="text-gray-600 leading-relaxed">开展劳动力外包及人力资源外包服务</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队介绍 -->
+    <section class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">团队介绍</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <img src="https://picsum.photos/200/200" alt="团队成员1" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-2">王丽娟</h3>
+                <p class="text-gray-600 leading-relaxed text-center">董事长</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <img src="https://picsum.photos/200/201" alt="团队成员2" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-2">曾浩雄</h3>
+                <p class="text-gray-600 leading-relaxed text-center">总经理</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <img src="https://picsum.photos/200/202" alt="团队成员3" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-2">张坤</h3>
+                <p class="text-gray-600 leading-relaxed text-center">执行董事</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">联系我们</h2>
+            <form class="max-w-md mx-auto">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-bold mb-2">姓名</label>
+                    <input type="text" id="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="请输入您的姓名">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-bold mb-2">邮箱</label>
+                    <input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="请输入您的邮箱">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700 font-bold mb-2">留言</label>
+                    <textarea id="message" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="请输入您的留言"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full w-full">提交</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2025 长沙宝业电子科技有限公司.保留所有权利。</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white hover:text-gray-400"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="text-white hover:text-gray-400"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="text-white hover:text-gray-400"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
+    
