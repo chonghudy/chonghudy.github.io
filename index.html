@@ -146,7 +146,7 @@
     </section>
 
     <!-- 预期功能 -->
-    <section id="function-display" class="bg-gray-100">
+    <section id="expected-function" class="bg-gray-100">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">预期功能</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -169,76 +169,53 @@
         </div>
     </section>
     
-	<!-- 功能展示 -->
-	<section id="function-display" class="bg-gray-100">
-	    <div class="container mx-auto px-4">
-	        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">功能展示 - 输入输出图片对比</h2>
-	        <div class="grid grid-cols-1 md:grid-cols-2 gap-12"> <!-- 两列对比布局 -->
-	
-	            <!-- 输入图片区域（带文件选择功能，初始隐藏图片） -->
-	            <div class="p-6 bg-gray-100 rounded-lg shadow-md">
-	                <h3 class="text-xl font-bold text-gray-800 mb-4">输入图片（原始图像）</h3>
-	                <!-- 隐藏的文件输入框 -->
-	                <input type="file" id="inputFile" accept="image/*" class="hidden">
-	                <!-- 触发文件选择的按钮 -->
-	                <button id="selectButton" class="bg-blue-500 text-white py-2 px-4 rounded-md mb-4">
-	                    选择本地图片文件
-	                </button>
-	                <!-- 图片预览区域，初始隐藏（添加hidden类） -->
-	                <img id="inputImg" src="#" alt="浓烟环境原始图像" class="w-full h-64 object-cover rounded-md mb-4 hidden">
-	                <p class="text-gray-600">
-	                    原始图片说明：浓烟环境下低对比度、高噪声的可见光/红外图像<br>
-	                    （点击上方按钮选择本地图片文件）
-	                </p>
-	            </div>
-	
-	            <!-- 输出图片区域（初始隐藏，固定路径） -->
-	            <div class="p-6 bg-gray-100 rounded-lg shadow-md">
-	                <h3 class="text-xl font-bold text-gray-800 mb-4">输出图片（算法处理后）</h3>
-	                <!-- 输出图片初始隐藏，src设置为固定路径 -->
-	                <img id="outputImg" src="img/输出.png" alt="增强降噪后图像" class="w-full h-64 object-cover rounded-md mb-4 hidden">
-	                <p class="text-gray-600">
-	                    输出图片说明：经算法处理后的增强图像，目标轮廓清晰化、噪声抑制<br>
-	                </p>
-	            </div>
-	
-	        </div>
-	    </div>
-	</section>
+<!-- 功能展示 -->
+<section id="function-display" class="bg-gray-100 scroll-mt-24">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">功能展示</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
-	<script>
-	    const inputFile = document.getElementById('inputFile');
-	    const selectButton = document.getElementById('selectButton');
-	    const inputImg = document.getElementById('inputImg');
-	    const outputImg = document.getElementById('outputImg');
-	
-	    selectButton.addEventListener('click', () => {
-	        inputFile.click();
-	    });
-	
-	    inputFile.addEventListener('change', (e) => {
-	        const file = e.target.files[0];
-	        if (file) {
-	            const reader = new FileReader();
-	            
-	            // 输入图片立即显示
-	            reader.onload = (event) => {
-	                inputImg.src = event.target.result;
-	                inputImg.classList.remove('hidden'); // 立即显示输入图片
-	                
-	                // 设置输出图片延迟2秒显示（模拟算法处理时间）
-	                setTimeout(() => {
-	                    outputImg.classList.remove('hidden'); // 延迟后显示输出图片
-	                }, 2000); // 2000毫秒=2秒（可调整为2000-3000之间）
-	            };
-	            reader.readAsDataURL(file);
-	        } else {
-	            inputImg.src = "#";
-	            inputImg.classList.add('hidden');
-	            outputImg.classList.add('hidden');
-	        }
-	    });
-	</script>
+            <!-- 输入图片区域 -->
+            <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">输入图片（原始图像）</h3>
+                <!-- 改成普通按钮 -->
+                <button id="demoButton" class="bg-blue-500 text-white py-2 px-4 rounded-md mb-4">
+                    点击开始演示
+                </button>
+                <img id="inputImg" src="img/原始.png" alt="浓烟环境原始图像" class="w-full h-64 object-cover rounded-md mb-4 hidden">
+                <p class="text-gray-600">
+                    原始图片说明：浓烟环境下低对比度、高噪声的可见光/红外图像
+                </p>
+            </div>
+
+            <!-- 输出图片区域 -->
+            <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">输出图片（算法处理后）</h3>
+                <img id="outputImg" src="img/输出.png" alt="增强降噪后图像" class="w-full h-64 object-cover rounded-md mb-4 hidden">
+                <p class="text-gray-600">
+                    输出图片说明：经算法处理后的增强图像，目标轮廓清晰化、噪声抑制
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    const demoButton = document.getElementById('demoButton');
+    const inputImg = document.getElementById('inputImg');
+    const outputImg = document.getElementById('outputImg');
+
+    demoButton.addEventListener('click', () => {
+        inputImg.classList.remove('hidden');
+
+        // 模拟算法处理延迟
+        setTimeout(() => {
+            outputImg.classList.remove('hidden');
+        }, 2000);
+    });
+</script>
+
 
 <nav class="shadow-md fixed top-0 left-0 right-0 z-10">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -312,7 +289,7 @@
             <div id="menu" class="hidden md:flex md:space-x-4 text-gray-600 font-medium text-sm uppercase transition-all duration-300">
                 <a href="index.html#function-intro" class="hover:text-gray-800">功能介绍</a>
                 <a href="index.html#application-scenarios" class="hover:text-gray-800">应用场景</a>
-                <a href="index.html#function-display" class="hover:text-gray-800">预期功能</a>
+                <a href="index.html#expected-function" class="hover:text-gray-800">预期功能</a>
                 <a href="index.html#function-display" class="hover:text-gray-800">功能展示</a>
                 <a href="example.html" class="hover:text-gray-800 font-semibold">例子展示</a>
             </div>
